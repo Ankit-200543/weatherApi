@@ -3,9 +3,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    const data = { message: 'Hello World' };
+    res.json(data); 
 });
-
 app.get("/getWeather/:latitude/:longitude", async (req, res) => {
     try {
         const weatherInfo = await fetch(
