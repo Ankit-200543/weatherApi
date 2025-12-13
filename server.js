@@ -39,6 +39,9 @@ app.get("/getWeather/:latitude/:longitude", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+app.get("/hello",(req,res)=>{
+    res.send("welcome")
+})
 
 
 app.listen(port, () => {
