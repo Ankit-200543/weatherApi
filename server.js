@@ -13,9 +13,12 @@ async function   myRepeatingTask() {
     }
     catch(error){
         console.log("Server is Sleeping")
+    }finally {
+        setTimeout(myRepeatingTask, 2000);
     }
     
 }
+myRepeatingTask();
 
 
 app.get('/', (req, res) => {
