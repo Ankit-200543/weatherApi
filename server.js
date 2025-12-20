@@ -5,6 +5,17 @@ const cors = require("cors");
 const port = process.env.PORT || 3000;
 
 app.use(cors());
+async function   myRepeatingTask() {
+    try{
+        let msg=await fetch(`https://multi-code.onrender.com/wakeUp`)
+        console.log(msg)
+
+    }
+    catch(error){
+        console.log("Server is Sleeping")
+    }
+    
+}
 
 
 app.get('/', (req, res) => {
