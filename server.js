@@ -5,6 +5,17 @@ const cors = require("cors");
 const port = process.env.PORT || 3000;
 
 app.use(cors());
+async function   myRepeatingTask() {
+    try{
+        let msg=await fetch(`https://multi-code.onrender.com/wakeUp`)
+        console.log(msg)
+
+    }
+    catch(error){
+        console.log("Server is Sleeping")
+    }
+    
+}
 
 
 app.get('/', (req, res) => {
@@ -39,6 +50,9 @@ app.get("/getWeather/:latitude/:longitude", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+app.get("/hello",(req,res)=>{
+    res.send("welcome")
+})
 
 
 app.listen(port, () => {
